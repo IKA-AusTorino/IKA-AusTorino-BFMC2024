@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: gazebo_ros_noetic
+    container_name: bfmc_simulator
     environment:
       - DISPLAY=${DISPLAY}            # Forward display to host
     volumes:
