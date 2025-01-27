@@ -1,0 +1,15 @@
+services:
+  gazebo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gazebo_ros_noetic
+    environment:
+      - DISPLAY=${DISPLAY}            # Forward display to host
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix # Enable GUI support
+      - /dev/dri:/dev/dri             # GPU rendering support
+    devices:
+      - /dev/dri                      # Access GPU for rendering
+    stdin_open: true
+    tty: true
